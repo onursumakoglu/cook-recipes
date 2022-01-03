@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Cook Recipes</string>
+    <string name="home">Home</string>
+    <string name="today_recip">Today\'s Top Pick</string>
+    <string name="top_review">Top Recipes</string>
+    <string name="see_all">See All</string>
+    <string name="recipes">Recipes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

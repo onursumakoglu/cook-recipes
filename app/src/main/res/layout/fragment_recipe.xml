@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RecipeFragment">
+
+    <ImageView
+        android:layout_width="10.74dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="26.63dp"
+        android:layout_marginTop="51dp"
+        android:background="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/fruit"
+        android:layout_width="256dp"
+        android:layout_height="27dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="51dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/recipes"
+        style="@style/recipes"/>
+
+    <ImageView
+        android:id="@+id/shape"
+        android:layout_width="16.19dp"
+        android:layout_height="16.25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25.94dp"
+        android:layout_marginTop="79.88dp" />
+
+
+
+
+</RelativeLayout>
