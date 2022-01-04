@@ -8,6 +8,7 @@ import com.onursumakoglu.cookrecipes.databinding.DoubleRecipeListItemBinding
 import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemBinding
 import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemStringBinding
 import com.onursumakoglu.cookrecipes.databinding.TopRecipesSeeallItemStringBinding
+import com.onursumakoglu.cookrecipes.domain.Cook
 
 class HomeAdapter(private val mList: List<*>) : RecyclerView.Adapter<HomeAdapterViewHolder>(){
 
@@ -47,6 +48,16 @@ class HomeAdapter(private val mList: List<*>) : RecyclerView.Adapter<HomeAdapter
         when(holder){
             is HomeAdapterViewHolder.HomeTopRecipeTitleHolder -> {
                 holder.topRecipeTitle.todayTopRecipeText.text = mList[position] as? String
+            }
+            is HomeAdapterViewHolder.HomeTopRecipeItemHolder -> {
+                holder.topRecipeItem.cook = mList[position] as? Cook
+            }
+            is HomeAdapterViewHolder.TopSeeAllTitleHolder -> {
+                holder.topSeeAllTitle.topRecipes.text = mList[position] as? String
+                holder.topSeeAllTitle.seeAll.text = mList[position] as? String
+            }
+            is HomeAdapterViewHolder.DoubleRecipeItemHolder -> {
+                holder
             }
         }
 
