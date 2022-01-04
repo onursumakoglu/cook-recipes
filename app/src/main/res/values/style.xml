@@ -4,9 +4,11 @@
         <item name="android:textSize">36sp</item>
         <item name="android:textColor">#1B202B</item>
     </style>
+
     <style name="today_recip">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#1B202B</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="recipes">
