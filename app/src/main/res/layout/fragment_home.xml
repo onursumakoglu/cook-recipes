@@ -55,9 +55,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:gravity="top"
             android:text="@string/top_review"
-            android:textAppearance="@style/top_review"
-            android:gravity="top" />
+            android:textAppearance="@style/top_review" />
 
         <TextView
             android:id="@+id/see_all"
