@@ -1,4 +1,4 @@
-package com.onursumakoglu.cookrecipes.view
+package com.onursumakoglu.cookrecipes.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.onursumakoglu.cookrecipes.databinding.DoubleRecipeListItemBinding
 import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemBinding
 import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemStringBinding
 import com.onursumakoglu.cookrecipes.databinding.TopRecipesSeeallItemStringBinding
-import com.onursumakoglu.cookrecipes.domain.Cook
+import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 
 class HomeAdapter(private val mList: List<*>) : RecyclerView.Adapter<HomeAdapterViewHolder>(){
 
@@ -50,21 +50,20 @@ class HomeAdapter(private val mList: List<*>) : RecyclerView.Adapter<HomeAdapter
                 holder.topRecipeTitle.todayTopRecipeText.text = mList[position] as? String
             }
             is HomeAdapterViewHolder.HomeTopRecipeItemHolder -> {
-                holder.topRecipeItem.cook = mList[position] as? Cook
+                holder.topRecipeItem.recipe = mList[position] as? Recipe
             }
             is HomeAdapterViewHolder.TopSeeAllTitleHolder -> {
                 holder.topSeeAllTitle.topRecipes.text = mList[position] as? String
                 holder.topSeeAllTitle.seeAll.text = mList[position] as? String
             }
             is HomeAdapterViewHolder.DoubleRecipeItemHolder -> {
-                holder
+                holder.doubleRecipe.recipe = mList[position] as? Recipe
             }
         }
-
 
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return mList.size
     }
 }

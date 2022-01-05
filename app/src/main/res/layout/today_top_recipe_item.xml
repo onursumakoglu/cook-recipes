@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="cook"
-            type="com.onursumakoglu.cookrecipes.domain.Cook" />
+            name="recipe"
+            type="com.onursumakoglu.cookrecipes.domain.entity.Recipe" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
                     android:background="@drawable/fajita"
-                    app:imageUrl="@{cook.image}"
+                    app:imageUrl="@{recipe.image}"
                     />
 
                 <androidx.cardview.widget.CardView
@@ -58,7 +58,7 @@
                             android:id="@+id/top_recipe_name"
                             android:layout_width="match_parent"
                             android:layout_height="22dp"
-                            android:text="@{cook.title}"
+                            android:text="@{recipe.title}"
                             android:textColor="@color/black"
                             android:textSize="16dp"
                             android:textStyle="bold" />
@@ -80,7 +80,7 @@
                                 android:layout_width="21dp"
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="5dp"
-                                android:text="@{cook.spoonacularScore}"
+                                android:text="@{recipe.spoonacularScore}"
                                 android:textColor="@color/black"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
@@ -104,7 +104,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="5dp"
-                                android:text="@{cook.readyInMinutes}"
+                                android:text="@{recipe.readyInMinutes}"
                                 android:textColor="#9A9EA7"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />

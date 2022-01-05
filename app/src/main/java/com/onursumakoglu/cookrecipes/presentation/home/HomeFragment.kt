@@ -1,4 +1,4 @@
-package com.onursumakoglu.cookrecipes.view
+package com.onursumakoglu.cookrecipes.presentation.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

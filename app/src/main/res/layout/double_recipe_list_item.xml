@@ -6,104 +6,202 @@
 
     <data>
         <variable
-            name="cook"
-            type="com.onursumakoglu.cookrecipes.domain.Cook" />
+            name="recipe"
+            type="com.onursumakoglu.cookrecipes.domain.entity.Recipe" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:cardCornerRadius="12dp">
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/recipe_fragment_image"
-                    android:layout_width="155dp"
-                    android:layout_height="155dp"
-                    android:background="@drawable/fajita"
-                    app:imageUrl="@{cook.image}"/>
-
-                <FrameLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="84dp">
+                    app:cardCornerRadius="12dp">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/recipe_fragment_image"
+                        android:layout_width="155dp"
+                        android:layout_height="155dp"
+                        android:background="@drawable/fajita"
+                        app:imageUrl="@{recipe.image}" />
 
-                        <TextView
-                            android:id="@+id/home_fragment_recipe_name"
-                            android:layout_width="110dp"
-                            android:layout_height="44dp"
-                            android:lines="2"
-                            android:text="@{cook.title}"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="84dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="13dp"
-                                android:layout_height="13dp"
-                                android:src="@drawable/ic_star" />
+                            android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/home_fragment_point"
-                                android:layout_width="20dp"
-                                android:layout_height="18dp"
-                                android:layout_marginLeft="5dp"
-                                android:text="@{cook.spoonacularScore}"
+                                android:id="@+id/home_fragment_recipe_name"
+                                android:layout_width="110dp"
+                                android:layout_height="44dp"
+                                android:lines="2"
+                                android:text="@{recipe.title}"
                                 android:textColor="@color/white"
-                                android:textSize="14sp" />
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
 
-                            <ImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_marginLeft="16dp"
-                                android:src="@drawable/ic_time_white" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
 
-                            <TextView
-                                android:id="@+id/home_fragment_time"
-                                android:layout_width="43dp"
-                                android:layout_height="19dp"
-                                android:layout_marginLeft="8dp"
-                                android:text="@{cook.readyInMinutes}"
-                                android:textColor="@color/white"
-                                android:textSize="14sp" />
+                                <ImageView
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:src="@drawable/ic_star" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_point"
+                                    android:layout_width="20dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="@{recipe.spoonacularScore}"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:src="@drawable/ic_time_white" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_time"
+                                    android:layout_width="43dp"
+                                    android:layout_height="19dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:text="@{recipe.readyInMinutes}"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
-                    </LinearLayout>
+                    </FrameLayout>
 
-                </FrameLayout>
+                </androidx.cardview.widget.CardView>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-        </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="12dp">
+
+                    <ImageView
+                        android:layout_width="155dp"
+                        android:layout_height="155dp"
+                        android:background="@drawable/tiramisu"
+                        app:imageUrl="@{recipe.image}" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="84dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="44dp"
+                                android:lines="2"
+                                android:text="@{recipe.title}"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:src="@drawable/ic_star" />
+
+                                <TextView
+                                    android:layout_width="20dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="@{recipe.spoonacularScore}"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:src="@drawable/ic_time_white" />
+
+                                <TextView
+                                    android:layout_width="43dp"
+                                    android:layout_height="19dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:text="@{recipe.readyInMinutes}"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

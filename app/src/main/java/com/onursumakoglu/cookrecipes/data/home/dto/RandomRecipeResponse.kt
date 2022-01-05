@@ -1,4 +1,4 @@
-package com.onursumakoglu.cookrecipes.data.dto
+package com.onursumakoglu.cookrecipes.data.home.dto
 
 import com.google.gson.annotations.SerializedName
 

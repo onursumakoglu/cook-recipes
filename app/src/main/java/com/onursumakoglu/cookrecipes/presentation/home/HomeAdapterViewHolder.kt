@@ -1,4 +1,4 @@
-package com.onursumakoglu.cookrecipes.view
+package com.onursumakoglu.cookrecipes.presentation.home
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
