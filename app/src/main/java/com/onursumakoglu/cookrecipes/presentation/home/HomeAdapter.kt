@@ -68,7 +68,7 @@ class HomeAdapter(private val mList: List<Any>) : RecyclerView.Adapter<HomeAdapt
             is RandomRecipeList -> return R.layout.double_recipe_list_item
         }
 
-        return R.layout.today_top_recipe_item
+        return R.layout.today_top_recipe_item_string
     }
 
 }

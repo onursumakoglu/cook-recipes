@@ -2,7 +2,7 @@ package com.onursumakoglu.cookrecipes.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.onursumakoglu.cookrecipes.domain.BaseResult
+import com.onursumakoglu.cookrecipes.domain.common.BaseResult
 import com.onursumakoglu.cookrecipes.domain.entity.HomeEntity
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 import com.onursumakoglu.cookrecipes.domain.usecase.HomeUseCase

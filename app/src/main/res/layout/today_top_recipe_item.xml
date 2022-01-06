@@ -36,8 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
                     app:imageUrl="@{recipe.image}"
-                    android:scaleType="fitXY"
-                    />
+                    android:scaleType="centerCrop" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -60,7 +59,7 @@
                             android:layout_height="22dp"
                             android:text="@{recipe.title}"
                             android:textColor="@color/black"
-                            android:lines="2"
+                            android:lines="1"
                             android:ellipsize="end"
                             android:textSize="16dp"
                             android:textStyle="bold" />

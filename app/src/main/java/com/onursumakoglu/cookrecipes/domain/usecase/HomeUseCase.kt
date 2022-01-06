@@ -2,11 +2,10 @@ package com.onursumakoglu.cookrecipes.domain.usecase
 
 import com.onursumakoglu.cookrecipes.data.home.HomeRepository
 import com.onursumakoglu.cookrecipes.data.home.dto.RandomRecipeResponse
-import com.onursumakoglu.cookrecipes.domain.BaseResult
+import com.onursumakoglu.cookrecipes.domain.common.BaseResult
 import com.onursumakoglu.cookrecipes.domain.entity.HomeEntity
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 import kotlinx.coroutines.flow.flow
-import java.util.concurrent.Flow
 
 class HomeUseCase(private val homeRepository: HomeRepository) {
 
