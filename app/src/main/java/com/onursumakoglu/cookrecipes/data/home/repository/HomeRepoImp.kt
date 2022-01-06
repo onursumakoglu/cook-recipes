@@ -2,6 +2,7 @@ package com.onursumakoglu.cookrecipes.data.home.repository
 
 import com.onursumakoglu.cookrecipes.data.home.HomeRepository
 import com.onursumakoglu.cookrecipes.data.home.api.HomeAPI
+import com.onursumakoglu.cookrecipes.data.home.dto.RecipeDTO
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 
 class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository{
@@ -10,14 +11,15 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository{
     override suspend fun getTodaysRecipe(): Recipe? {
         val response = homeApi.randomRecipes(1, "", false, "136939dfffca42d191e8269d1e977001")
         var recipe: Recipe? = null
+        var recipeDTO: RecipeDTO? = null
 
         if(response.isSuccessful){
 
-            val recipeDTO = response.body()?.recipes?.get(0)
+            recipeDTO = response.body()?.recipes?.get(0)
 
             recipe = recipeDTO?.let {
                 Recipe(
-                    id = it.id,
+                    id = it.id?:0,
                     title = it.title,
                     image = it.image,
                     readyInMinutes = it.readyInMinutes,
@@ -25,7 +27,6 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository{
                 )
             }
         }
-
         return recipe
     }
 
@@ -45,10 +46,8 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository{
                 )
 
             } ?: listOf()
-
         }
         return listOf()
     }
-
 
 }

@@ -6,7 +6,10 @@
 
     <data>
         <variable
-            name="recipe"
+            name="leftRecipe"
+            type="com.onursumakoglu.cookrecipes.domain.entity.Recipe" />
+        <variable
+            name="rightRecipe"
             type="com.onursumakoglu.cookrecipes.domain.entity.Recipe" />
     </data>
 
@@ -45,7 +48,7 @@
                         android:layout_width="155dp"
                         android:layout_height="155dp"
                         android:background="@drawable/fajita"
-                        app:imageUrl="@{recipe.image}" />
+                        app:imageUrl="@{leftRecipe.image}" />
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -63,7 +66,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="44dp"
                                 android:lines="2"
-                                android:text="@{recipe.title}"
+                                android:text="@{leftRecipe.title}"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -84,7 +87,7 @@
                                     android:layout_width="20dp"
                                     android:layout_height="18dp"
                                     android:layout_marginLeft="5dp"
-                                    android:text="@{recipe.spoonacularScore}"
+                                    android:text="@{leftRecipe.spoonacularScore.toString()}"
                                     android:textColor="@color/white"
                                     android:textSize="14sp" />
 
@@ -99,7 +102,7 @@
                                     android:layout_width="43dp"
                                     android:layout_height="19dp"
                                     android:layout_marginLeft="8dp"
-                                    android:text="@{recipe.readyInMinutes}"
+                                    android:text="@{leftRecipe.readyInMinutes.toString()}"
                                     android:textColor="@color/white"
                                     android:textSize="14sp" />
 
@@ -134,7 +137,7 @@
                         android:layout_width="155dp"
                         android:layout_height="155dp"
                         android:background="@drawable/tiramisu"
-                        app:imageUrl="@{recipe.image}" />
+                        app:imageUrl="@{rightRecipe.image}" />
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -151,7 +154,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="44dp"
                                 android:lines="2"
-                                android:text="@{recipe.title}"
+                                android:text="@{rightRecipe.title}"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -171,7 +174,7 @@
                                     android:layout_width="20dp"
                                     android:layout_height="18dp"
                                     android:layout_marginLeft="5dp"
-                                    android:text="@{recipe.spoonacularScore}"
+                                    android:text="@{rightRecipe.spoonacularScore.toString()}"
                                     android:textColor="@color/white"
                                     android:textSize="14sp" />
 
@@ -185,7 +188,7 @@
                                     android:layout_width="43dp"
                                     android:layout_height="19dp"
                                     android:layout_marginLeft="8dp"
-                                    android:text="@{recipe.readyInMinutes}"
+                                    android:text="@{rightRecipe.readyInMinutes.toString()}"
                                     android:textColor="@color/white"
                                     android:textSize="14sp" />
 

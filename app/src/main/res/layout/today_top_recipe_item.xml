@@ -35,8 +35,8 @@
                     android:id="@+id/top_recipe_image"
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
-                    android:background="@drawable/fajita"
                     app:imageUrl="@{recipe.image}"
+                    android:scaleType="fitXY"
                     />
 
                 <androidx.cardview.widget.CardView
@@ -60,6 +60,8 @@
                             android:layout_height="22dp"
                             android:text="@{recipe.title}"
                             android:textColor="@color/black"
+                            android:lines="2"
+                            android:ellipsize="end"
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
@@ -80,7 +82,7 @@
                                 android:layout_width="21dp"
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="5dp"
-                                android:text="@{recipe.spoonacularScore}"
+                                android:text="@{recipe.spoonacularScore.toString()}"
                                 android:textColor="@color/black"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
@@ -104,7 +106,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="5dp"
-                                android:text="@{recipe.readyInMinutes}"
+                                android:text="@{recipe.readyInMinutes.toString()}"
                                 android:textColor="#9A9EA7"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />

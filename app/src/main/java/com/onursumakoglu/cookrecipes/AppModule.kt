@@ -1,7 +1,7 @@
 package com.onursumakoglu.cookrecipes
 
 import android.app.Application
-import com.onursumakoglu.cookrecipes.di.HomeDepInj
+import com.onursumakoglu.cookrecipes.di.HomeDI
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -15,7 +15,7 @@ class AppModule : Application(){
         startKoin{
             androidLogger(Level.ERROR)
             androidContext(this@AppModule)
-            modules(listOf(HomeDepInj.appModule))
+            modules(listOf(HomeDI.appModule))
         }
 
 
