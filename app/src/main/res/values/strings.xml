@@ -3,22 +3,7 @@
     <string name="home">Home</string>
     <string name="today_recip">Today\'s Top Pick</string>
     <string name="top_review">Top Recipes</string>
-    <string name="see_all">See All</string>
     <string name="recipes">Recipes</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
-    <style name="top_review">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">#1B202B</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="see_all">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">#42CA47</item>
-    </style>
-
+    <string name="readyInMinutes">%1$s min</string>
 
 </resources>
