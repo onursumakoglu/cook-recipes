@@ -58,7 +58,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="22dp"
                             android:text="@{recipe.title}"
-                            android:textColor="@color/black"
+                            android:textColor="@color/home_title"
                             android:lines="1"
                             android:ellipsize="end"
                             android:textSize="16dp"
@@ -82,7 +82,7 @@
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="5dp"
                                 android:text="@{recipe.spoonacularScore.toString()}"
-                                android:textColor="@color/black"
+                                android:textColor="@color/home_title"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
 
@@ -106,7 +106,7 @@
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="5dp"
                                 android:text="@{@string/readyInMinutes(recipe.readyInMinutes)}"
-                                android:textColor="#9A9EA7"
+                                android:textColor="@color/home_subtitle"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
 

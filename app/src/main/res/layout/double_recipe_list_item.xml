@@ -88,7 +88,7 @@
                                 android:layout_height="18dp"
                                 android:layout_marginLeft="5dp"
                                 android:text="@{leftRecipe.spoonacularScore.toString()}"
-                                android:textColor="@color/white"
+                                android:textColor="@color/home_subtitle"
                                 android:textSize="14sp" />
 
                             <ImageView
@@ -103,7 +103,7 @@
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="@{@string/readyInMinutes(leftRecipe.readyInMinutes)}"
-                                android:textColor="@color/white"
+                                android:textColor="@color/home_subtitle"
                                 android:textSize="14sp" />
 
                         </LinearLayout>
@@ -177,7 +177,7 @@
                                 android:layout_height="18dp"
                                 android:layout_marginLeft="5dp"
                                 android:text="@{rightRecipe.spoonacularScore.toString()}"
-                                android:textColor="@color/white"
+                                android:textColor="@color/home_subtitle"
                                 android:textSize="14sp" />
 
                             <ImageView
@@ -191,7 +191,7 @@
                                 android:layout_height="19dp"
                                 android:layout_marginLeft="8dp"
                                 android:text="@{@string/readyInMinutes(rightRecipe.readyInMinutes)}"
-                                android:textColor="@color/white"
+                                android:textColor="@color/home_subtitle"
                                 android:textSize="14sp" />
 
                         </LinearLayout>
