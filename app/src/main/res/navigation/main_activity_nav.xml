@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="com.onursumakoglu.cookrecipes.presentation.RecipeFragment"
+        android:name="com.onursumakoglu.cookrecipes.presentation.recipes.RecipeFragment"
         android:label="fragment_recipe"
         tools:layout="@layout/fragment_recipe" />
 </navigation>

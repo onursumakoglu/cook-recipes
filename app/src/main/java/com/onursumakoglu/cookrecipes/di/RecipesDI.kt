@@ -1,10 +1,12 @@
 package com.onursumakoglu.cookrecipes.di
 
-import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepository
 import com.onursumakoglu.cookrecipes.data.home.api.HomeAPI
 import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepoImp
+import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepository
 import com.onursumakoglu.cookrecipes.domain.usecase.HomeUseCase
+import com.onursumakoglu.cookrecipes.domain.usecase.RecipesUseCase
 import com.onursumakoglu.cookrecipes.presentation.home.HomeViewModel
+import com.onursumakoglu.cookrecipes.presentation.recipes.RecipesViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -12,11 +14,11 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class HomeDI {
+class RecipesDI {
     companion object{
         val appModule = module {
 
-            viewModel { HomeViewModel(get()) }
+            viewModel { RecipesViewModel(get()) }
 
             single <HomeAPI> {
 
@@ -33,9 +35,9 @@ class HomeDI {
                 retrofit.create(HomeAPI::class.java)
             }
 
-            single <HomeRepository> {HomeRepoImp(get())}
+            single <HomeRepository> { HomeRepoImp(get()) }
 
-            single {HomeUseCase(get())}
+            single { RecipesUseCase(get()) }
         }
 
     }

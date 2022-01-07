@@ -1,4 +1,4 @@
-package com.onursumakoglu.cookrecipes.presentation.home
+package com.onursumakoglu.cookrecipes.presentation.common
 
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 

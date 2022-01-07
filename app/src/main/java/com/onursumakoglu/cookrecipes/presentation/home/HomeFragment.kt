@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.onursumakoglu.cookrecipes.R
 import com.onursumakoglu.cookrecipes.databinding.FragmentHomeBinding
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
+import com.onursumakoglu.cookrecipes.presentation.common.RandomRecipeList
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get

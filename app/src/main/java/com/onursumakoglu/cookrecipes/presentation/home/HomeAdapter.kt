@@ -8,6 +8,7 @@ import com.onursumakoglu.cookrecipes.databinding.DoubleRecipeListItemBinding
 import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemBinding
 import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemStringBinding
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
+import com.onursumakoglu.cookrecipes.presentation.common.RandomRecipeList
 
 class HomeAdapter(private val mList: List<Any>) : RecyclerView.Adapter<HomeAdapterViewHolder>(){
 
