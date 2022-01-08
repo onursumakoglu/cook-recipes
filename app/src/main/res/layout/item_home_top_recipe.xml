@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="recipe"
             type="com.onursumakoglu.cookrecipes.domain.entity.Recipe" />
@@ -35,8 +35,8 @@
                     android:id="@+id/top_recipe_image"
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
-                    app:imageUrl="@{recipe.image}"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{recipe.image}" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -57,10 +57,10 @@
                             android:id="@+id/top_recipe_name"
                             android:layout_width="match_parent"
                             android:layout_height="22dp"
+                            android:ellipsize="end"
+                            android:lines="1"
                             android:text="@{recipe.title}"
                             android:textColor="@color/home_title"
-                            android:lines="1"
-                            android:ellipsize="end"
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
@@ -73,8 +73,8 @@
 
                             <ImageView
                                 android:id="@+id/top_recipe_point"
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:src="@drawable/ic_star" />
 
                             <TextView
@@ -96,8 +96,8 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:src="@drawable/ic_time_green" />
 
                             <TextView

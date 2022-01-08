@@ -14,7 +14,6 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
 
-
 class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel = get()
@@ -54,7 +53,9 @@ class HomeFragment : Fragment() {
 
                         var endcount = mList.size
 
-                        binding.cookRecipeList.adapter?.notifyItemChanged(beforeCount, endcount)
+                        binding.cookRecipeList.adapter?.let {
+                            it.notifyItemChanged(beforeCount, endcount)
+                        }
                     }
                 }
             }
@@ -87,7 +88,7 @@ class HomeFragment : Fragment() {
     }
 
     fun createRecipeList(list: List<Recipe>): MutableList<RandomRecipeList>{
-        var randomList = mutableListOf<RandomRecipeList>()
+        val randomList = mutableListOf<RandomRecipeList>()
 
         list.forEachIndexed { index, recipe ->
             if (index %2 == 0)
@@ -114,6 +115,5 @@ class HomeFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 
 }

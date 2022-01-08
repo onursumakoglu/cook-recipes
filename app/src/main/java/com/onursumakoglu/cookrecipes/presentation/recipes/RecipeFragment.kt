@@ -1,11 +1,13 @@
 package com.onursumakoglu.cookrecipes.presentation.recipes
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.onursumakoglu.cookrecipes.R
@@ -37,94 +39,29 @@ class RecipeFragment : Fragment() {
         _binding?.viewModel = recipesViewModel
 
         lifecycleScope.launch {
-            recipesViewModel.recipesState.collect {
-                when(it){
-                    is RecipesUiState.Success -> {
-                        it.recipesEntity.randomRecipe?.let {
-
-                            mList.addAll(it)
-                            binding.recipesFragmentCookRecipeList.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL, false)
-                            binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(it, "list")
-                        }
-                    }
-                    is RecipesUiState.PageSuccess -> {
-                        var beforeCount = mList.size
-
-                        var randomList = createRecipeList(it.recipeList)
-
-                        mList.addAll(randomList)
-
-                        var endcount = mList.size
-
-                        binding.recipesFragmentCookRecipeList.adapter?.notifyItemChanged(beforeCount, endcount)
-                    }
-                }
-            }
-
-
-        }
-
-        recipesViewModel.getList()
-
-
-
-        return root
-    }
-
-    fun createRecipeList(list: List<Recipe>): MutableList<RandomRecipeList>{
-        var randomRecipeList = mutableListOf<RandomRecipeList>()
-
-        list.forEachIndexed { index, recipe ->
-            if (index %2 == 0)
-                randomRecipeList.add(RandomRecipeList(mutableListOf(recipe)))
-            else
-                randomRecipeList[randomRecipeList.size-1].list?.add(recipe)
-        }
-
-        return randomRecipeList
-    }
-
-    fun addListener() {
-        binding.recipesFragmentCookRecipeList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                if (!recyclerView.canScrollVertically(1)){
-                    recipesViewModel.fetch()
-                }
-            }
-        })
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
-}
-
-
-        /*
-        _binding?.viewModel = recipesViewModel
-
-        lifecycleScope.launch {
-            recipesViewModel.recipesState.collect{ recipesUiState ->
+            recipesViewModel.recipesState.collect { recipesUiState ->
                 when(recipesUiState){
                     is RecipesUiState.Success -> {
+                        recipesUiState.recipesEntity.randomRecipe.let { recipeList ->
+                            mList.addAll(recipeList)
+                           }
 
-                        mList.addAll(createRecipeList(recipesUiState.recipesEntity.randomRecipe))
-
-                        binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList)
+                        binding.recipesFragmentCookRecipeList.layoutManager = LinearLayoutManager(context)
+                        binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "normal")
                     }
                     is RecipesUiState.PageSuccess -> {
-                        var beforeCount = mList.size
+                        val beforeCount = mList.size
 
-                        var randomList = createRecipeList(recipesUiState.recipeList)
+                        val randomList = createRecipeList(recipesUiState.recipeList)
 
                         mList.addAll(randomList)
 
-                        var endcount = mList.size
+                        val endcount = mList.size
 
-                        binding.recipesFragmentCookRecipeList.adapter?.notifyItemChanged(beforeCount, endcount)
+                        binding.recipesFragmentCookRecipeList.adapter?.let {
+                            println("girdik")
+                            it.notifyItemChanged(beforeCount, endcount)
+                        }
                     }
                 }
             }
@@ -134,7 +71,25 @@ class RecipeFragment : Fragment() {
 
         addListener()
 
+        selectListType()
+
         return root
+    }
+
+    fun selectListType(){
+
+        binding.gridIcon.setOnClickListener {
+            binding.recipesFragmentCookRecipeList.layoutManager = GridLayoutManager(context, 2)
+            binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "grid")
+            binding.gridIcon.setImageResource(R.drawable.ic_grid_menu_green)
+            binding.listIcon.setImageResource(R.drawable.ic_list_menu_gray)
+        }
+        binding.listIcon.setOnClickListener {
+            binding.recipesFragmentCookRecipeList.layoutManager = LinearLayoutManager(context)
+            binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "normal")
+            binding.listIcon.setImageResource(R.drawable.ic_list_menu)
+            binding.gridIcon.setImageResource(R.drawable.ic_grid_menu)
+        }
     }
 
     fun createRecipeList(list: List<Recipe>): MutableList<RandomRecipeList>{
@@ -148,7 +103,6 @@ class RecipeFragment : Fragment() {
         }
 
         return randomRecipeList
-
     }
 
     fun addListener() {
@@ -167,7 +121,4 @@ class RecipeFragment : Fragment() {
         _binding = null
     }
 
-
 }
-
-         */

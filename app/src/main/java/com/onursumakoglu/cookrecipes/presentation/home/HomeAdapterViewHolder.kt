@@ -2,14 +2,14 @@ package com.onursumakoglu.cookrecipes.presentation.home
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.onursumakoglu.cookrecipes.databinding.DoubleRecipeListItemBinding
-import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemBinding
-import com.onursumakoglu.cookrecipes.databinding.TodayTopRecipeItemStringBinding
+import com.onursumakoglu.cookrecipes.databinding.ItemDoubleRecipeBinding
+import com.onursumakoglu.cookrecipes.databinding.ItemHomeTitleBinding
+import com.onursumakoglu.cookrecipes.databinding.ItemHomeTopRecipeBinding
 
 sealed class HomeAdapterViewHolder(binding: View) : RecyclerView.ViewHolder(binding){
 
-    class HomeTopRecipeTitleHolder(val topRecipeTitle: TodayTopRecipeItemStringBinding) : HomeAdapterViewHolder(topRecipeTitle.root)
-    class HomeTopRecipeItemHolder(val topRecipeItem: TodayTopRecipeItemBinding) : HomeAdapterViewHolder(topRecipeItem.root)
-    class DoubleRecipeItemHolder(val doubleRecipe: DoubleRecipeListItemBinding) : HomeAdapterViewHolder(doubleRecipe.root)
+    class HomeTitleItemViewHolder(val titleItem: ItemHomeTitleBinding) : HomeAdapterViewHolder(titleItem.root)
+    class HomeTopRecipeItemHolder(val topRecipeItem: ItemHomeTopRecipeBinding) : HomeAdapterViewHolder(topRecipeItem.root)
+    class HomeDoubleRecipeItemHolder(val doubleRecipeItem: ItemDoubleRecipeBinding) : HomeAdapterViewHolder(doubleRecipeItem.root)
 
 }

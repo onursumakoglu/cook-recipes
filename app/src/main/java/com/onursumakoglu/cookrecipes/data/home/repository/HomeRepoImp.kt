@@ -7,7 +7,7 @@ import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
 
     override suspend fun getTodaysRecipe(): Recipe? {
-        val response = homeApi.randomRecipes(1, "", false, "136939dfffca42d191e8269d1e977001")
+        val response = homeApi.randomRecipes(1, "", false, "9994454bfd3d4a3190e102bb6d88e3e4")
         var recipe: Recipe? = null
         val recipeDTO: RecipeDTO?
 
@@ -29,7 +29,7 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
     }
 
     override suspend fun getRandomRecipes(start: Int, end: Int): List<Recipe> {
-        val response = homeApi.randomRecipes(20, "", false, "136939dfffca42d191e8269d1e977001")
+        val response = homeApi.randomRecipes(20, "", false, "9994454bfd3d4a3190e102bb6d88e3e4")
 
         if (response.isSuccessful){
 

@@ -3,7 +3,6 @@ package com.onursumakoglu.cookrecipes.presentation.recipes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.onursumakoglu.cookrecipes.domain.common.BaseResult
-import com.onursumakoglu.cookrecipes.domain.entity.HomeEntity
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 import com.onursumakoglu.cookrecipes.domain.entity.RecipesEntity
 import com.onursumakoglu.cookrecipes.domain.usecase.HomeUseCase

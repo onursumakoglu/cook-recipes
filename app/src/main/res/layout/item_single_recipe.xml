@@ -4,29 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="recipe"
             type="com.onursumakoglu.cookrecipes.domain.entity.Recipe" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="12dp"
             android:background="@drawable/rectangle"
             app:cardCornerRadius="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -75,16 +73,16 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:background="@drawable/ic_star" />
 
                         <TextView
                             android:id="@+id/recipe_fragment_point"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5.72dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="6dp"
                             android:text="@{recipe.spoonacularScore.toString()}"
-                            android:textSize="12dp" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -97,16 +95,16 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:background="@drawable/ic_time" />
 
                         <TextView
                             android:id="@+id/recipe_fragment_time"
                             android:layout_width="wrap_content"
-                            android:layout_height="19dp"
-                            android:layout_marginLeft="8dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="6dp"
                             android:text="@{@string/readyInMinutes(recipe.readyInMinutes)}"
-                            android:textSize="14dp" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
