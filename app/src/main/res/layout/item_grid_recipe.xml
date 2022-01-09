@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -9,93 +10,107 @@
             type="com.onursumakoglu.cookrecipes.domain.entity.Recipe" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="148dp"
-        android:layout_height="185dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        app:cardCornerRadius="16dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            app:imageUrl="@{recipe.image}" />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="155dp"
+            app:cardCornerRadius="16dp"
+            tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/title"
+            <ImageView
+                android:id="@+id/recipe_fragment_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@{recipe.title}"
-                android:textColor="@color/home_title"
-                android:textSize="16dp" />
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{recipe.image}" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="12dp">
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/home_fragment_recipe_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="5dp"
+                    android:ellipsize="end"
+                    android:lines="2"
+                    android:text="@{recipe.title}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5">
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ic_star" />
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/time"
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_star" />
+
+                        <TextView
+                            android:id="@+id/home_fragment_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="@{recipe.spoonacularScore.toString()}"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:maxLines="1"
-                        android:text="@{recipe.spoonacularScore.toString()}"
-                        android:textColor="@color/home_subtitle"
-                        android:textSize="16dp" />
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_time_white" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5">
+                        <TextView
+                            android:id="@+id/home_fragment_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="@{@string/readyInMinutes(recipe.readyInMinutes)}"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/ic_time_white"
-                        android:scaleType="fitCenter" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:maxLines="1"
-                        android:text="@{@string/readyInMinutes(recipe.readyInMinutes)}"
-                        android:textColor="@color/home_subtitle"
-                        android:textSize="16dp" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

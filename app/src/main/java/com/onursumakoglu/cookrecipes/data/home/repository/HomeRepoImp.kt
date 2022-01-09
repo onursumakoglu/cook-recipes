@@ -7,7 +7,7 @@ import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
 
     override suspend fun getTodaysRecipe(): Recipe? {
-        val response = homeApi.randomRecipes(1, "", false, "9994454bfd3d4a3190e102bb6d88e3e4")
+        val response = homeApi.randomRecipes(1, "", false, "0032005913964ef488db5b4e714be885")
         var recipe: Recipe? = null
         val recipeDTO: RecipeDTO?
 
@@ -21,7 +21,8 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
                     title = it.title,
                     image = it.image,
                     readyInMinutes = it.readyInMinutes,
-                    spoonacularScore = it.spoonacularScore
+                    spoonacularScore = it.spoonacularScore,
+                    summary = it.summary
                 )
             }
         }
@@ -29,7 +30,7 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
     }
 
     override suspend fun getRandomRecipes(start: Int, end: Int): List<Recipe> {
-        val response = homeApi.randomRecipes(20, "", false, "9994454bfd3d4a3190e102bb6d88e3e4")
+        val response = homeApi.randomRecipes(20, "", false, "0032005913964ef488db5b4e714be885")
 
         if (response.isSuccessful){
 
@@ -39,7 +40,8 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
                     title = it.title,
                     image = it.image,
                     readyInMinutes = it.readyInMinutes,
-                    spoonacularScore = it.spoonacularScore
+                    spoonacularScore = it.spoonacularScore,
+                    summary = it.summary
                 )
 
             } ?: listOf()

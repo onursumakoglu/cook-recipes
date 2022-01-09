@@ -7,5 +7,6 @@ data class RecipeDTO (
     @SerializedName("title") var title: String? = null,
     @SerializedName("image") var image: String? = null,
     @SerializedName("readyInMinutes") var readyInMinutes: Int? = null,
-    @SerializedName("spoonacularScore") var spoonacularScore: Int? = null
+    @SerializedName("spoonacularScore") var spoonacularScore: Int? = null,
+    @SerializedName("summary") var summary: String? = null
 )

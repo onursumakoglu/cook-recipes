@@ -35,6 +35,13 @@ class RecipesAdapter(private var mList: List<Any>, var type: String) : RecyclerV
                 holder.gridItem.recipe = mList[position] as? Recipe
             }
         }
+
+        holder.binding.setOnClickListener {
+            var recipe = mList[position] as? Recipe
+            println(recipe?.summary)
+            Singleton.showUserInfoDialog(it.context, recipe!!)
+        }
+
     }
 
     override fun getItemCount(): Int {
