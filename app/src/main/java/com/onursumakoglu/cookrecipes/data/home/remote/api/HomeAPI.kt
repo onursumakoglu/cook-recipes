@@ -1,6 +1,6 @@
-package com.onursumakoglu.cookrecipes.data.home.api
+package com.onursumakoglu.cookrecipes.data.home.remote.api
 
-import com.onursumakoglu.cookrecipes.data.home.dto.RandomRecipeResponse
+import com.onursumakoglu.cookrecipes.data.home.remote.dto.RandomRecipeResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

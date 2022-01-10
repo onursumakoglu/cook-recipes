@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -123,8 +124,12 @@ class RecipeFragment : Fragment() {
     fun backToHome(){
         binding.recipesFragmentBack.setOnClickListener {
 
-
-
+            /*
+            val direction = RecipeFragmentDirections.actionRecipeFragmentToHomeFragment()
+            Navigation.findNavController(it).navigate(direction)
+             */
+            mList.clear()
+            requireActivity().onBackPressed()
         }
     }
 

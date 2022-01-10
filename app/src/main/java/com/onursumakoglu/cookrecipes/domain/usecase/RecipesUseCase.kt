@@ -1,6 +1,6 @@
 package com.onursumakoglu.cookrecipes.domain.usecase
 
-import com.onursumakoglu.cookrecipes.data.home.dto.RandomRecipeResponse
+import com.onursumakoglu.cookrecipes.data.home.remote.dto.RandomRecipeResponse
 import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepository
 import com.onursumakoglu.cookrecipes.domain.common.BaseResult
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe

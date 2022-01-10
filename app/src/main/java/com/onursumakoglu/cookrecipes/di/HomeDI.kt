@@ -1,12 +1,15 @@
 package com.onursumakoglu.cookrecipes.di
 
+import androidx.room.Room
+import com.onursumakoglu.cookrecipes.data.home.local.HomeDatabase
 import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepository
-import com.onursumakoglu.cookrecipes.data.home.api.HomeAPI
+import com.onursumakoglu.cookrecipes.data.home.remote.api.HomeAPI
 import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepoImp
 import com.onursumakoglu.cookrecipes.domain.usecase.HomeUseCase
 import com.onursumakoglu.cookrecipes.presentation.home.HomeViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -33,11 +36,17 @@ class HomeDI {
                 retrofit.create(HomeAPI::class.java)
             }
 
-            single <HomeRepository> {HomeRepoImp(get())}
+            single <HomeRepository> {HomeRepoImp(get(), get())}
 
             single {HomeUseCase(get())}
+
+            single {
+                Room.databaseBuilder(
+                    androidContext(),
+                    HomeDatabase::class.java, "HomeDatabase"
+                ).allowMainThreadQueries().build()
+            }
+
         }
-
     }
-
 }

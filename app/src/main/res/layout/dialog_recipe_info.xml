@@ -177,8 +177,8 @@
 
                 <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="170dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_height="138dp"
+                    android:layout_marginTop="7dp">
 
                     <TextView
                         android:id="@+id/dialog_recipe_description"
