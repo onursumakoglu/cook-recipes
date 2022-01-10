@@ -22,6 +22,7 @@ class RecipeInfoDialog(mContext: Context, val recipe: Recipe): Dialog(mContext) 
         binding.dialogRecipePoint.text = recipe.spoonacularScore.toString()
         binding.dialogRecipeMinutes.text = recipe.readyInMinutes.toString()
         binding.dialogRecipeDescription.text = recipe.summary
+        binding.dialogRecipePrice.text = recipe.servings.toString()
 
     }
 

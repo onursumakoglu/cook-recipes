@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -73,23 +74,9 @@ class RecipeFragment : Fragment() {
 
         selectListType()
 
+        backFragment()
+
         return root
-    }
-
-    fun selectListType(){
-
-        binding.gridIcon.setOnClickListener {
-            binding.recipesFragmentCookRecipeList.layoutManager = GridLayoutManager(context, 2)
-            binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "grid")
-            binding.gridIcon.setImageResource(R.drawable.ic_grid_menu_green)
-            binding.listIcon.setImageResource(R.drawable.ic_list_menu_gray)
-        }
-        binding.listIcon.setOnClickListener {
-            binding.recipesFragmentCookRecipeList.layoutManager = LinearLayoutManager(context)
-            binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "normal")
-            binding.listIcon.setImageResource(R.drawable.ic_list_menu)
-            binding.gridIcon.setImageResource(R.drawable.ic_grid_menu)
-        }
     }
 
     fun createRecipeList(list: List<Recipe>): MutableList<RandomRecipeList>{
@@ -114,6 +101,31 @@ class RecipeFragment : Fragment() {
                 }
             }
         })
+    }
+
+    fun selectListType(){
+
+        binding.gridIcon.setOnClickListener {
+            binding.recipesFragmentCookRecipeList.layoutManager = GridLayoutManager(context, 2)
+            binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "grid")
+            binding.gridIcon.setImageResource(R.drawable.ic_grid_menu_green)
+            binding.listIcon.setImageResource(R.drawable.ic_list_menu_gray)
+        }
+        binding.listIcon.setOnClickListener {
+            binding.recipesFragmentCookRecipeList.layoutManager = LinearLayoutManager(context)
+            binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "normal")
+            binding.listIcon.setImageResource(R.drawable.ic_list_menu)
+            binding.gridIcon.setImageResource(R.drawable.ic_grid_menu)
+
+        }
+    }
+
+    fun backFragment(){
+        binding.recipesFragmentBack.setOnClickListener {
+
+
+
+        }
     }
 
     override fun onDestroy() {

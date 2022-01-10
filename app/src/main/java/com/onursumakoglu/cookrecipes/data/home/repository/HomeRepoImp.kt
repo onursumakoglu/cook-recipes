@@ -22,7 +22,8 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
                     image = it.image,
                     readyInMinutes = it.readyInMinutes,
                     spoonacularScore = it.spoonacularScore,
-                    summary = it.summary
+                    summary = it.summary,
+                    servings = it.servings
                 )
             }
         }
@@ -41,7 +42,8 @@ class HomeRepoImp(private var homeApi: HomeAPI) : HomeRepository {
                     image = it.image,
                     readyInMinutes = it.readyInMinutes,
                     spoonacularScore = it.spoonacularScore,
-                    summary = it.summary
+                    summary = it.summary,
+                    servings = it.servings
                 )
 
             } ?: listOf()

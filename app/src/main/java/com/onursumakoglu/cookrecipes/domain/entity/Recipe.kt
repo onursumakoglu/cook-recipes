@@ -6,5 +6,6 @@ data class Recipe (
     var image: String? = null,
     var readyInMinutes: Int? = null,
     var spoonacularScore: Int? = null,
-    var summary: String? = null
+    var summary: String? = null,
+    var servings: Int? = null
 ) : Entity()

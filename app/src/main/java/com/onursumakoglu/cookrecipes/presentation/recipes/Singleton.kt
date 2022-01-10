@@ -8,10 +8,11 @@ class Singleton {
     companion object{
         private lateinit var recipeInfoDialog: RecipeInfoDialog
 
-        fun showUserInfoDialog(context: Context, recipe: Recipe){
+        fun showRecipeInfoDialog(context: Context, recipe: Recipe){
             recipeInfoDialog = RecipeInfoDialog(context, recipe)
             recipeInfoDialog.setCancelable(true)
             recipeInfoDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            recipeInfoDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
             recipeInfoDialog.show()
 
         }
