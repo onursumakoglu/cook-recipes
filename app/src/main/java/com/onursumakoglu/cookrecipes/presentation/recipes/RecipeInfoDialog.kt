@@ -3,6 +3,7 @@ package com.onursumakoglu.cookrecipes.presentation.recipes
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.text.Html
 import com.onursumakoglu.cookrecipes.R
 import com.onursumakoglu.cookrecipes.databinding.DialogRecipeInfoBinding
 import com.onursumakoglu.cookrecipes.domain.entity.Recipe
@@ -21,7 +22,7 @@ class RecipeInfoDialog(mContext: Context, val recipe: Recipe): Dialog(mContext) 
         BindingUtil.loadImage(binding.dialogRecipeImage, recipe.image)
         binding.dialogRecipePoint.text = recipe.spoonacularScore.toString()
         binding.dialogRecipeMinutes.text = recipe.readyInMinutes.toString()
-        binding.dialogRecipeDescription.text = recipe.summary
+        binding.dialogRecipeDescription.text = Html.fromHtml(recipe.summary)
         binding.dialogRecipePrice.text = recipe.servings.toString()
 
     }

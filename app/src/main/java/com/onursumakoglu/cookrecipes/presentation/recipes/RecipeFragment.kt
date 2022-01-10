@@ -74,7 +74,7 @@ class RecipeFragment : Fragment() {
 
         selectListType()
 
-        backFragment()
+        backToHome()
 
         return root
     }
@@ -120,7 +120,7 @@ class RecipeFragment : Fragment() {
         }
     }
 
-    fun backFragment(){
+    fun backToHome(){
         binding.recipesFragmentBack.setOnClickListener {
 
 
