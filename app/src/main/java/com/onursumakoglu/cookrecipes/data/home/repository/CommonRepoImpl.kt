@@ -8,7 +8,7 @@ import com.onursumakoglu.cookrecipes.domain.entity.Recipe
 import java.text.SimpleDateFormat
 import java.util.*
 
-class HomeRepoImp(private var homeApi: HomeAPI, private var homeDatabase: HomeDatabase) : HomeRepository {
+class CommonRepoImpl(private var homeApi: HomeAPI, private var homeDatabase: HomeDatabase) : CommonRepository {
 
     override suspend fun getTodaysRecipe(): Recipe? {
 

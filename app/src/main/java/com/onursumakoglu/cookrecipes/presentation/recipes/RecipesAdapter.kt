@@ -40,6 +40,7 @@ class RecipesAdapter(private var mList: List<Any>, var type: String) : RecyclerV
             var recipe = mList[position] as? Recipe
             Singleton.showRecipeInfoDialog(it.context, recipe!!)
         }
+
     }
 
     override fun getItemCount(): Int {

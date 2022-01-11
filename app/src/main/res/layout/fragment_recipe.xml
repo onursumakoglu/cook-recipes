@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         tools:context=".presentation.recipes.RecipeFragment">
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
@@ -40,7 +40,7 @@
 
                 <TextView
                     android:id="@+id/home"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -48,9 +48,9 @@
                     android:text="@string/recipes"
                     android:textAppearance="@style/recipes" />
 
-            </LinearLayout>
+            </FrameLayout>
 
-        </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <LinearLayout
             android:id="@+id/recipes_grid_list_menu"

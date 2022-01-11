@@ -1,8 +1,8 @@
 package com.onursumakoglu.cookrecipes.di
 
 import com.onursumakoglu.cookrecipes.data.home.remote.api.HomeAPI
-import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepoImp
-import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepository
+import com.onursumakoglu.cookrecipes.data.home.repository.CommonRepoImpl
+import com.onursumakoglu.cookrecipes.data.home.repository.CommonRepository
 import com.onursumakoglu.cookrecipes.domain.usecase.RecipesUseCase
 import com.onursumakoglu.cookrecipes.presentation.recipes.RecipesViewModel
 import okhttp3.OkHttpClient
@@ -33,7 +33,7 @@ class RecipesDI {
                 retrofit.create(HomeAPI::class.java)
             }
 
-            single <HomeRepository> { HomeRepoImp(get(), get()) }
+            single <CommonRepository> { CommonRepoImpl(get(), get()) }
 
             single { RecipesUseCase(get()) }
         }

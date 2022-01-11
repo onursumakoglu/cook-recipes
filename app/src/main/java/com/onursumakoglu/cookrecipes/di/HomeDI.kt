@@ -2,9 +2,9 @@ package com.onursumakoglu.cookrecipes.di
 
 import androidx.room.Room
 import com.onursumakoglu.cookrecipes.data.home.local.HomeDatabase
-import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepository
+import com.onursumakoglu.cookrecipes.data.home.repository.CommonRepository
 import com.onursumakoglu.cookrecipes.data.home.remote.api.HomeAPI
-import com.onursumakoglu.cookrecipes.data.home.repository.HomeRepoImp
+import com.onursumakoglu.cookrecipes.data.home.repository.CommonRepoImpl
 import com.onursumakoglu.cookrecipes.domain.usecase.HomeUseCase
 import com.onursumakoglu.cookrecipes.presentation.home.HomeViewModel
 import okhttp3.OkHttpClient
@@ -36,7 +36,7 @@ class HomeDI {
                 retrofit.create(HomeAPI::class.java)
             }
 
-            single <HomeRepository> {HomeRepoImp(get(), get())}
+            single <CommonRepository> {CommonRepoImpl(get(), get())}
 
             single {HomeUseCase(get())}
 
