@@ -16,6 +16,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="24dp"
             android:textAppearance="@style/today_recip"
+            android:fontFamily="@font/opensans_bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

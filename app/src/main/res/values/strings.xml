@@ -5,5 +5,8 @@
     <string name="top_review">Top Recipes</string>
     <string name="recipes">Recipes</string>
     <string name="readyInMinutes">%1$s min</string>
+    <string name="dialog_minutes">minutes</string>
+    <string name="dialog_price">USD</string>
+    <string name="dialog_desc">Description</string>
 
 </resources>

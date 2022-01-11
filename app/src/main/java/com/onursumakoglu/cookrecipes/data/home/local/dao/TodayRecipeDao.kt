@@ -1,9 +1,10 @@
-package com.onursumakoglu.cookrecipes.data.home.local
+package com.onursumakoglu.cookrecipes.data.home.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.onursumakoglu.cookrecipes.data.home.local.entity.TodayRecipeEntity
 
 @Dao
 interface TodayRecipeDao {

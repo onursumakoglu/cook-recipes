@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -11,23 +10,19 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="24dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+        android:layout_marginTop="15dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="0dp"
+            android:layout_width="155dp"
             android:layout_height="155dp"
             app:cardCornerRadius="16dp"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/recipe_fragment_image"
-                android:layout_width="match_parent"
+                android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 app:imageUrl="@{recipe.image}" />
@@ -39,7 +34,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/home_fragment_recipe_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
@@ -47,11 +41,10 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="5dp"
                     android:ellipsize="end"
-                    android:lines="2"
+                    android:maxLines="2"
                     android:text="@{recipe.title}"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/recipe_name_style"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,7 +57,6 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -73,21 +65,20 @@
                             android:src="@drawable/ic_star" />
 
                         <TextView
-                            android:id="@+id/home_fragment_point"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
                             android:text="@{recipe.spoonacularScore.toString()}"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textAppearance="@style/recipe_score_min"/>
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="7dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -95,13 +86,12 @@
                             android:src="@drawable/ic_time_white" />
 
                         <TextView
-                            android:id="@+id/home_fragment_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
                             android:text="@{@string/readyInMinutes(recipe.readyInMinutes)}"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textAppearance="@style/recipe_score_min"/>
 
                     </LinearLayout>
 

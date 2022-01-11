@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
                 when(homeUiState){
                     is HomeUiState.Success -> {
                         homeUiState.homeEntity.todaysRecipe?.let { recipe ->
+                            mList.clear()
                             mList.add("Today's Top Pick")
                             mList.add(recipe)
                         }

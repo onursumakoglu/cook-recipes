@@ -51,11 +51,11 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="5dp"
                     android:ellipsize="end"
-                    android:lines="2"
+                    android:maxLines="2"
                     android:text="@{leftRecipe.title}"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/opensans_bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -83,7 +83,8 @@
                             android:layout_marginLeft="4dp"
                             android:text="@{leftRecipe.spoonacularScore.toString()}"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/avenirnextltpro_medium"/>
 
                     </LinearLayout>
 
@@ -105,7 +106,8 @@
                             android:layout_marginLeft="4dp"
                             android:text="@{@string/readyInMinutes(leftRecipe.readyInMinutes)}"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/avenirnextltpro_medium"/>
 
                     </LinearLayout>
 
@@ -147,7 +149,7 @@
                     android:text="@{rightRecipe.title}"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/opensans_bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -174,7 +176,7 @@
                             android:layout_marginLeft="4dp"
                             android:text="@{rightRecipe.spoonacularScore.toString()}"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textAppearance="@style/recipe_score_min"/>
 
                     </LinearLayout>
 
@@ -195,7 +197,7 @@
                             android:layout_marginLeft="4dp"
                             android:text="@{@string/readyInMinutes(rightRecipe.readyInMinutes)}"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:textAppearance="@style/recipe_score_min"/>
 
                     </LinearLayout>
 

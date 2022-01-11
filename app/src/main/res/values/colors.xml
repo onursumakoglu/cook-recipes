@@ -9,10 +9,12 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="home_title">#1B202B</color>
-    <color name="home_title_button">#42CA47</color>
     <color name="home_subtitle">#9A9EA7</color>
 
     <color name="bottomSelectedColor">#42CA47</color>
     <color name="bottomUnSelectedColor">#BBBEC5</color>
+
+    <color name="dialog_desc_color">#494B51</color>
+    <color name="gray_color">#9A9EA7</color>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.onursumakoglu.cookrecipes.data.home.local
+package com.onursumakoglu.cookrecipes.data.home.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

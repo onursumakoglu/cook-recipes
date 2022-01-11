@@ -111,7 +111,7 @@ class RecipeFragment : Fragment() {
     fun selectListType(){
 
         binding.gridIcon.setOnClickListener {
-            binding.recipesFragmentCookRecipeList.layoutManager = GridLayoutManager(context, 2)
+            binding.recipesFragmentCookRecipeList.layoutManager = GridLayoutManager(context, 2, )
             binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "grid")
             binding.gridIcon.setImageResource(R.drawable.ic_grid_menu_green)
             binding.listIcon.setImageResource(R.drawable.ic_list_menu_gray)
@@ -127,7 +127,6 @@ class RecipeFragment : Fragment() {
 
     fun backToHome(){
         binding.recipesFragmentBack.setOnClickListener {
-            mList.clear()
             requireActivity().onBackPressed()
         }
     }
