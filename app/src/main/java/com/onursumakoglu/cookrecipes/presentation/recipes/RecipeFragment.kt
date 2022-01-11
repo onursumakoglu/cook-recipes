@@ -34,7 +34,6 @@ class RecipeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment //
         _binding = FragmentRecipeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -48,17 +47,22 @@ class RecipeFragment : Fragment() {
                             mList.addAll(recipeList)
                            }
 
+                        println(mList)
+
                         binding.recipesFragmentCookRecipeList.layoutManager = LinearLayoutManager(context)
                         binding.recipesFragmentCookRecipeList.adapter = RecipesAdapter(mList, "normal")
                     }
                     is RecipesUiState.PageSuccess -> {
                         val beforeCount = mList.size
 
-                        val randomList = createRecipeList(recipesUiState.recipeList)
-
-                        mList.addAll(randomList)
+                        recipesUiState.recipeList.randomRecipe.let { recipeList ->
+                            mList.addAll(recipeList)
+                        }
 
                         val endcount = mList.size
+
+                        println(mList)
+                        println(mList.size)
 
                         binding.recipesFragmentCookRecipeList.adapter?.let {
                             println("girdik")
@@ -123,11 +127,6 @@ class RecipeFragment : Fragment() {
 
     fun backToHome(){
         binding.recipesFragmentBack.setOnClickListener {
-
-            /*
-            val direction = RecipeFragmentDirections.actionRecipeFragmentToHomeFragment()
-            Navigation.findNavController(it).navigate(direction)
-             */
             mList.clear()
             requireActivity().onBackPressed()
         }

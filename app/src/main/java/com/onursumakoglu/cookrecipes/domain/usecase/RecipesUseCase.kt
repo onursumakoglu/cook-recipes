@@ -25,13 +25,15 @@ class RecipesUseCase(private val homeRepository: HomeRepository) {
         }
     }
 
-    fun nextRandomRecipe() : kotlinx.coroutines.flow.Flow<BaseResult<List<Recipe>, RandomRecipeResponse>> {
+    fun nextRandomRecipe() : kotlinx.coroutines.flow.Flow<BaseResult<RecipesEntity, RandomRecipeResponse>> {
         ++page
         return flow {
 
             emit(
                 BaseResult.Success(
-                    homeRepository.getRandomRecipes(page * pageSize, (page + 1) * pageSize)
+                    RecipesEntity(
+                        randomRecipe = homeRepository.getRandomRecipes(page * pageSize, (page + 1) * pageSize)
+                    )
                 )
             )
         }

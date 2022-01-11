@@ -57,7 +57,7 @@ class RecipesViewModel(private val recipesUseCase: RecipesUseCase) : ViewModel()
 sealed class RecipesUiState {
     data class Success(val recipesEntity: RecipesEntity): RecipesUiState()
     data class Error(val error: String?): RecipesUiState()
-    data class PageSuccess(val recipeList: List<Recipe>): RecipesUiState()
+    data class PageSuccess(val recipeList: RecipesEntity): RecipesUiState()
     object Idle : RecipesUiState()
     object Loading : RecipesUiState()
 }

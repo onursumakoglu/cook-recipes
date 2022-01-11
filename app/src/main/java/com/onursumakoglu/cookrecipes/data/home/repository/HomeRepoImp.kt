@@ -22,7 +22,7 @@ class HomeRepoImp(private var homeApi: HomeAPI, private var homeDatabase: HomeDa
 
         if (localRecipe == null){
 
-            val response = homeApi.randomRecipes(1, "", false, "896a50a4a6d3429fb2f269b9edf60ac7")
+            val response = homeApi.randomRecipes(1, "", false, "7a01574f7c2c4a26bddaf1c1174bb77e")
 
             var recipe: Recipe? = null
             val recipeDTO: RecipeDTO?
@@ -110,7 +110,7 @@ class HomeRepoImp(private var homeApi: HomeAPI, private var homeDatabase: HomeDa
     }
 
     override suspend fun getRandomRecipes(start: Int, end: Int): List<Recipe> {
-        val response = homeApi.randomRecipes(20, "", false, "896a50a4a6d3429fb2f269b9edf60ac7")
+        val response = homeApi.randomRecipes(20, "", false, "7a01574f7c2c4a26bddaf1c1174bb77e")
 
         if (response.isSuccessful){
 

@@ -38,10 +38,8 @@ class RecipesAdapter(private var mList: List<Any>, var type: String) : RecyclerV
 
         holder.binding.setOnClickListener {
             var recipe = mList[position] as? Recipe
-            println(recipe?.summary)
             Singleton.showRecipeInfoDialog(it.context, recipe!!)
         }
-
     }
 
     override fun getItemCount(): Int {
